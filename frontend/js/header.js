@@ -1,3 +1,5 @@
+import { renderRegister } from "./register.js";
+
 let headerContainer = document.getElementById("header-container");
 let logoContainer = document.getElementById("logo-container");
 let navBar = document.getElementById("nav-bar");
@@ -32,6 +34,8 @@ export function renderNav() {
   registerBtn.innerHTML = "Register";
   registerBtn.id = "register-btn";
   registerBtn.className = "nav-btn";
+
+  registerBtn.addEventListener("click", renderRegister);
 
   navBar.append(navButtons);
   navButtons.append(homeBtn);
