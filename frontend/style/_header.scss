@@ -1,1 +1,69 @@
+header {
+  font-family: "Noto Serif Oriya", serif;
+}
 
+h1 {
+  font-size: 3rem;
+}
+
+#bottom-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+  background-color: red;
+}
+
+#nav-bar {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: auto;
+  padding-left: 50px;
+}
+
+#login-container {
+  position: relative;
+  padding-right: 60px;
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav-btn {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  margin-right: 50px;
+  font-size: 2rem;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-out;
+}
+
+.nav-btn::before {
+  left: 50%;
+}
+
+.nav-btn::after {
+  right: 50%;
+}
+
+.nav-btn:hover::before,
+.nav-btn:hover::after {
+  width: calc(50%);
+}

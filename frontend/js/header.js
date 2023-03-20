@@ -9,7 +9,7 @@ let loginContainer = document.getElementById("login-container");
 
 export function renderHeader() {
   let headerLogo = document.createElement("h1");
-  headerLogo.innerHTML = "Store Logo";
+  headerLogo.innerHTML = "Fresh Kicks";
   headerLogo.id = "header-logo";
 
   logoContainer.append(headerLogo);
