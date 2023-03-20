@@ -28,7 +28,6 @@ export function renderRegisterInputs() {
   let regUsernameInput = document.createElement("input");
   regUsernameInput.type = "text";
   regUsernameInput.id = "reg-username-input";
-  regUsernameInput.placeholder = "User Name";
   regUsernameInput.required = true;
 
   let regPasswordLabel = document.createElement("label");
@@ -38,7 +37,6 @@ export function renderRegisterInputs() {
   let regPasswordInput = document.createElement("input");
   regPasswordInput.type = "password";
   regPasswordInput.id = "reg-password-input";
-  regPasswordInput.placeholder = "Password";
   regPasswordInput.required = true;
 
   let regNameLabel = document.createElement("label");
@@ -48,7 +46,6 @@ export function renderRegisterInputs() {
   let regNameInput = document.createElement("input");
   regNameInput.type = "text";
   regNameInput.id = "reg-name-input";
-  regNameInput.placeholder = "First Name";
   regNameInput.required = true;
 
   let regLastNameLabel = document.createElement("label");
@@ -58,7 +55,6 @@ export function renderRegisterInputs() {
   let regLastNameInput = document.createElement("input");
   regLastNameInput.type = "text";
   regLastNameInput.id = "reg-last-name-input";
-  regLastNameInput.placeholder = "Last Name";
   regLastNameInput.required = true;
 
   let regPhoneNumberLabel = document.createElement("label");
@@ -69,7 +65,6 @@ export function renderRegisterInputs() {
   regPhoneNumberInput.type = "tel";
   regPhoneNumberInput.type = "number";
   regPhoneNumberInput.id = "reg-phone-number-input";
-  regPhoneNumberInput.placeholder = "Phone Number";
   regPhoneNumberInput.required = true;
 
   let regMailLabel = document.createElement("label");
@@ -79,7 +74,6 @@ export function renderRegisterInputs() {
   let regMailInput = document.createElement("input");
   regMailInput.type = "email";
   regMailInput.id = "reg-mail-input";
-  regMailInput.placeholder = "E-mail";
   regMailInput.required = true;
 
   let regButton = document.createElement("button");
