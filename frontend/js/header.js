@@ -1,5 +1,7 @@
 import { renderRegister } from "./register.js";
+import { renderHome } from "./home.js";
 
+let contentContainer = document.getElementById("content-container");
 let headerContainer = document.getElementById("header-container");
 let logoContainer = document.getElementById("logo-container");
 let navBar = document.getElementById("nav-bar");
@@ -25,6 +27,11 @@ export function renderNav() {
   homeBtn.id = "home-btn";
   homeBtn.className = "nav-btn";
 
+  homeBtn.addEventListener("click", () => {
+    contentContainer.innerHTML = "";
+    renderHome();
+  });
+
   let aboutBtn = document.createElement("button");
   aboutBtn.innerHTML = "About";
   aboutBtn.id = "about-btn";
@@ -35,7 +42,10 @@ export function renderNav() {
   registerBtn.id = "register-btn";
   registerBtn.className = "nav-btn";
 
-  registerBtn.addEventListener("click", renderRegister);
+  registerBtn.addEventListener("click", () => {
+    contentContainer.innerHTML = "";
+    renderRegister();
+  });
 
   navBar.append(navButtons);
   navButtons.append(homeBtn);
