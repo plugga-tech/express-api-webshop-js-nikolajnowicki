@@ -1,0 +1,9 @@
+#login-bar input {
+  height: 25px;
+  width: 150px;
+  margin-right: 5px;
+}
+
+#login-bar input::placeholder {
+  font-size: 0.9 rem;
+}

@@ -8,10 +8,15 @@ let navBar = document.getElementById("nav-bar");
 let loginContainer = document.getElementById("login-container");
 
 export function renderHeader() {
+  let headerLogoImg = document.createElement("img");
+  headerLogoImg.src = "./public/images/sneaker-logo.png";
+  headerLogoImg.id = "header-logo-img";
+
   let headerLogo = document.createElement("h1");
   headerLogo.innerHTML = "Fresh Kicks";
   headerLogo.id = "header-logo";
 
+  logoContainer.append(headerLogoImg);
   logoContainer.append(headerLogo);
 
   renderNav();
