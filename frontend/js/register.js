@@ -82,6 +82,11 @@ export function renderRegisterInputs() {
   regMailInput.placeholder = "E-mail";
   regMailInput.required = true;
 
+  let regButton = document.createElement("button");
+  regButton.id = "reg-button";
+  regButton.textContent = "Register";
+  regButton.type = "submit";
+
   contentContainer.append(registerFormContainer);
   registerFormContainer.append(registerForm);
   registerForm.appendChild(regUsernameLabel);
@@ -96,4 +101,5 @@ export function renderRegisterInputs() {
   registerForm.appendChild(regPhoneNumberInput);
   registerForm.appendChild(regMailLabel);
   registerForm.appendChild(regMailInput);
+  registerForm.append(regButton);
 }
