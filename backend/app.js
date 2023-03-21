@@ -3,12 +3,24 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
+let mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 let apiRouter = require("./routes/api");
-
 var app = express();
+
+async function init() {
+  try {
+    const options = { useNewUrlParser: true, useUnifiedTopology: true };
+    await mongoose.connect("mongodb://127.0.0.1:27017/nikolajnowicki", options);
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+init();
 
 app.use(cors());
 app.use(logger("dev"));
