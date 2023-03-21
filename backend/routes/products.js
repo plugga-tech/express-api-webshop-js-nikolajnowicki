@@ -2,15 +2,15 @@ var express = require("express");
 var router = express.Router();
 
 router.get("/", function (req, res, next) {
-  res.send("Users router works");
+  res.send("Prod router works");
 });
 
 router.get("/add", function (req, res, next) {
-  res.send("Add user router");
+  res.send("Add products router router");
 });
 
-router.get("/login", function (req, res, next) {
-  res.send("Login user router");
+router.get("/category", function (req, res, next) {
+  res.send("category router");
 });
 
 module.exports = router;
