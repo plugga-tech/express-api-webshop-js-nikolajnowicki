@@ -1,5 +1,6 @@
 import { renderRegister } from "./register.js";
 import { renderHome } from "./home.js";
+import { renderAbout } from "./about.js";
 
 let contentContainer = document.getElementById("content-container");
 let headerContainer = document.getElementById("header-container");
@@ -41,6 +42,11 @@ export function renderNav() {
   aboutBtn.innerHTML = "About";
   aboutBtn.id = "about-btn";
   aboutBtn.className = "nav-btn";
+
+  aboutBtn.addEventListener("click", () => {
+    contentContainer.innerHTML = "";
+    renderAbout();
+  });
 
   let registerBtn = document.createElement("button");
   registerBtn.innerHTML = "Register";
