@@ -1,4 +1,5 @@
 let contentContainer = document.getElementById("content-container");
+import { v4 as uuidv4 } from "https://cdn.skypack.dev/uuid";
 
 export function renderRegister() {
   let RegisterPageContainer = document.createElement("div");
@@ -80,6 +81,30 @@ export function renderRegisterInputs() {
   regButton.id = "reg-button";
   regButton.textContent = "Register";
   regButton.type = "submit";
+
+  regButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    let user = {
+      id: uuidv4(),
+      username: regUsernameInput.value,
+      password: regPasswordInput.value,
+      firstName: regNameInput.value,
+      lastName: regLastNameInput.value,
+      phoneNumber: regPhoneNumberInput.value,
+      email: regMailInput.value,
+    };
+    let response = await fetch("http://localhost:3000/api/users/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+
+    if (response.ok) {
+      console.log(response);
+    } else {
+      console.log("Failed to add user");
+    }
+  });
 
   contentContainer.append(registerFormContainer);
   registerFormContainer.append(registerForm);
