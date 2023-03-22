@@ -1,15 +1,15 @@
-var express = require("express");
-var router = express.Router();
-const Product = require("../models/products-model");
+let express = require("express");
+let router = express.Router();
+let Product = require("../models/products-model");
 
 router.get("/", async function (req, res, next) {
-  const products = await Product.find({});
+  let products = await Product.find({});
   res.status(200).json(products);
 });
 
 router.get("/:id", async function (req, res, next) {
-  const productId = req.params.id;
-  const product = await Product.findById(productId);
+  let productId = req.params.id;
+  let product = await Product.findById(productId);
   if (!product) {
     return res.status(404).json({ message: "Product not found" });
   }
@@ -22,9 +22,9 @@ router.get("/add", function (req, res, next) {
 
 router.post("/add", async function (req, res, next) {
   try {
-    const { name, description, price, lager, category, token } = req.body;
+    let { name, description, price, lager, category, token } = req.body;
 
-    const product = new Product({
+    let product = new Product({
       name,
       description,
       price,
@@ -45,11 +45,11 @@ router.get("/categories/", async function (req, res, next) {
 });
 
 router.get("/category/:category?", async function (req, res, next) {
-  const category = req.params.category;
+  let category = req.params.category;
   if (!category) {
     return res.status(400).json({ message: "Please enter a valid category" });
   }
-  const products = await Product.find({ category: category });
+  let products = await Product.find({ category: category });
   if (!products.length) {
     return res.status(404).json({ message: "No products found" });
   }

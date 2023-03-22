@@ -1,9 +1,9 @@
-var express = require("express");
-var router = express.Router();
-var usersRouter = require("./users");
-var productsRouter = require("./products");
-var categoriesRouter = require("./categories");
-var ordersRouter = require("./orders");
+let express = require("express");
+let router = express.Router();
+let usersRouter = require("./users");
+let productsRouter = require("./products");
+let categoriesRouter = require("./categories");
+let ordersRouter = require("./orders");
 /* GET users listing. */
 router.get("/", function (req, res, next) {
   res.send("API is working");

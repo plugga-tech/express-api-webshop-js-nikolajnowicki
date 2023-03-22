@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+let mongoose = require("mongoose");
+let bcrypt = require("bcrypt");
 require("dotenv").config();
 
-const UserSchema = new mongoose.Schema({
+let UserSchema = new mongoose.Schema({
   name: {
     type: String,
     // required: true,
