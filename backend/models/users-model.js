@@ -6,24 +6,21 @@ let UserSchema = new mongoose.Schema({
   name: {
     type: String,
     // required: true,
-    minlength: 3,
-    maxlength: 20,
-    trim: true,
+    minlength: 1,
+    maxlength: 50,
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    minlength: 6,
+    minlength: 1,
     maxlength: 50,
-    trim: true,
   },
   password: {
     type: String,
     required: true,
     minlength: 1,
-    maxlength: 60,
-    trim: true,
+    maxlength: 80,
   },
 });
 
