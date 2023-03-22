@@ -13,7 +13,7 @@ POST http://localhost:3000/api/users/
 Content-Type: application/json
 
 {
-  "id": "// EN USER ID"
+  "id": "641ad1ef9a9f5ac1930c495f"
 }
 
 ###
@@ -23,9 +23,9 @@ POST http://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-  "name": "Test Testsson",
-  "email": "test@mail.com",
-  "password": "test"
+  "name": "Vdea3d3st Testsson",
+  "email": "tefc3sffta@mail.com",
+  "password": "4te333dst123"
 }
 
 ###
@@ -79,7 +79,7 @@ POST http://localhost:3000/api/orders/add
 Content-Type: application/json
 
 {
-  "user": "{{getUsers.response.body.$[0].id}}",
+  "user": "{getUsers.response.body.$[0].id}",
       "products": [
     {
       "productId": "// ID PÅ EN PRODUKT",

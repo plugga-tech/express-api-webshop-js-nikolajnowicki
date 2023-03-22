@@ -22,8 +22,17 @@ export function renderRegisterInputs() {
   let registerForm = document.createElement("form");
   registerForm.id = "register-form";
 
+  let regNameLabel = document.createElement("label");
+  regNameLabel.textContent = "Name ";
+  regNameLabel.setAttribute("for", "reg-name-input");
+
+  let regNameInput = document.createElement("input");
+  regNameInput.type = "text";
+  regNameInput.id = "reg-name-input";
+  regNameInput.required = true;
+
   let regUsernameLabel = document.createElement("label");
-  regUsernameLabel.textContent = "User name ";
+  regUsernameLabel.textContent = "E-Mail";
   regUsernameLabel.setAttribute("for", "reg-username-input");
 
   let regUsernameInput = document.createElement("input");
@@ -39,34 +48,6 @@ export function renderRegisterInputs() {
   regPasswordInput.type = "password";
   regPasswordInput.id = "reg-password-input";
   regPasswordInput.required = true;
-
-  let regNameLabel = document.createElement("label");
-  regNameLabel.textContent = "First Name ";
-  regNameLabel.setAttribute("for", "reg-name-input");
-
-  let regNameInput = document.createElement("input");
-  regNameInput.type = "text";
-  regNameInput.id = "reg-name-input";
-  regNameInput.required = true;
-
-  let regLastNameLabel = document.createElement("label");
-  regLastNameLabel.textContent = "Last Name ";
-  regLastNameLabel.setAttribute("for", "reg-last-name-input");
-
-  let regLastNameInput = document.createElement("input");
-  regLastNameInput.type = "text";
-  regLastNameInput.id = "reg-last-name-input";
-  regLastNameInput.required = true;
-
-  let regPhoneNumberLabel = document.createElement("label");
-  regPhoneNumberLabel.textContent = "Phone Number ";
-  regPhoneNumberLabel.setAttribute("for", "reg-phone-number-input");
-
-  let regPhoneNumberInput = document.createElement("input");
-  regPhoneNumberInput.type = "tel";
-  regPhoneNumberInput.type = "number";
-  regPhoneNumberInput.id = "reg-phone-number-input";
-  regPhoneNumberInput.required = true;
 
   let regMailLabel = document.createElement("label");
   regMailLabel.textContent = "E-mail ";
@@ -85,13 +66,9 @@ export function renderRegisterInputs() {
   regButton.addEventListener("click", async (e) => {
     e.preventDefault();
     let user = {
-      id: uuidv4(),
-      username: regUsernameInput.value,
+      email: regUsernameInput.value,
       password: regPasswordInput.value,
-      firstName: regNameInput.value,
-      lastName: regLastNameInput.value,
-      phoneNumber: regPhoneNumberInput.value,
-      email: regMailInput.value,
+      name: regNameInput.value,
     };
     let response = await fetch("http://localhost:3000/api/users/add", {
       method: "POST",
@@ -108,17 +85,12 @@ export function renderRegisterInputs() {
 
   contentContainer.append(registerFormContainer);
   registerFormContainer.append(registerForm);
+  registerForm.appendChild(regNameLabel);
+  registerForm.appendChild(regNameInput);
   registerForm.appendChild(regUsernameLabel);
   registerForm.appendChild(regUsernameInput);
   registerForm.appendChild(regPasswordLabel);
   registerForm.appendChild(regPasswordInput);
-  registerForm.appendChild(regNameLabel);
-  registerForm.appendChild(regNameInput);
-  registerForm.appendChild(regLastNameLabel);
-  registerForm.appendChild(regLastNameInput);
-  registerForm.appendChild(regPhoneNumberLabel);
-  registerForm.appendChild(regPhoneNumberInput);
-  registerForm.appendChild(regMailLabel);
-  registerForm.appendChild(regMailInput);
+
   registerForm.append(regButton);
 }
