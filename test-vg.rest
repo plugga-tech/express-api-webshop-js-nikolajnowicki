@@ -51,7 +51,8 @@ GET http://localhost:3000/api/products
 ###
 
 // HÄMTA SPECIFIK PRODUKT
-GET http://localhost:3000/api/products/ // ID PÅ EN SPECIFIK PRODUKT
+GET http://localhost:3000/api/products/641b0c55d73c57a2ddeb381b
+// ID PÅ EN SPECIFIK PRODUKT
 
 ###
 
@@ -60,11 +61,11 @@ POST http://localhost:3000/api/products/add
 Content-Type: application/json
 
 {
-  "name": "Produkt 2",
+  "name": "Produkt 24",
   "description": "Beskrivning av produkt 1",
   "price": 100,
   "lager": 10,
-  "category": "// ID PÅ EN SPECIFIK KATEGORI",
+  "category": "Boots",
   "token": "1234key1234"
 }
 
