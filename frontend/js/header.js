@@ -82,6 +82,37 @@ export function renderLoginBar() {
   loginBtn.innerHTML = "Login";
   loginBtn.id = "login-btn";
 
+  loginBtn.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    try {
+      const email = usernameInput.value;
+      const password = passwordInput.value;
+
+      console.log(email, password);
+
+      const response = await fetch("http://localhost:3000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.status === 200) {
+        const { token } = await response.json();
+        localStorage.setItem("token", token);
+        alert("Logged in successfully!");
+      } else {
+        const error = await response.text();
+        throw new Error(error);
+      }
+    } catch (err) {
+      console.error(err);
+      alert(`Failed to log in: ${err.message}`);
+    }
+  });
+
   loginContainer.append(loginBar);
   loginBar.append(usernameInput);
   loginBar.append(passwordInput);

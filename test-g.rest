@@ -23,9 +23,9 @@ POST http://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-  "name": "Vdea3d3st Testsson",
-  "email": "tefc3sffta@mail.com",
-  "password": "4te333dst123"
+  "name": "sephi",
+  "email": "sephi@mail.com",
+  "password": "sephi123"
 }
 
 ###
@@ -35,8 +35,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-  "email": "// EN USER EMAIL",
-  "password": "// EN USER EMAIL"
+  "email": "sephi@mail.com",
+  "password": "sephi123"
 }
 
 ###
