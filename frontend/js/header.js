@@ -102,7 +102,7 @@ export function renderLoginBar() {
       if (response.status === 200) {
         const { token } = await response.json();
         localStorage.setItem("token", token);
-        alert("Logged in successfully!");
+        renderLoggedIn(loginBar);
       } else {
         const error = await response.text();
         throw new Error(error);
@@ -117,4 +117,21 @@ export function renderLoginBar() {
   loginBar.append(usernameInput);
   loginBar.append(passwordInput);
   loginBar.append(loginBtn);
+}
+
+export function renderLoggedIn(loginBar) {
+  loginBar.innerHTML = "";
+  loginBar.innerHTML = `Welcome!`;
+
+  let logoutBtn = document.createElement("button");
+  logoutBtn.innerHTML = "Logout";
+  logoutBtn.id = "logout-btn";
+
+  loginBar.append(logoutBtn);
+
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    loginBar.innerHTML = "";
+    renderLoginBar();
+  });
 }
