@@ -1,0 +1,26 @@
+#home-page-header {
+  text-align: center;
+}
+
+.category-header {
+  text-align: center;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-container .product-card {
+  flex-basis: calc(
+    25% - 20px
+  ); /* adjust the width of the product card as needed */
+  margin: 10px;
+}
+
+#products-container {
+  display: block;
+}

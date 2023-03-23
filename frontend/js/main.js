@@ -4,6 +4,4 @@ import { renderHome } from "./home.js";
 import { renderAbout } from "./about.js";
 
 renderHeader();
-// renderRegister();
 renderHome();
-//renderAbout();

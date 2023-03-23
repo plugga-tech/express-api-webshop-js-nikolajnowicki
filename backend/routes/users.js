@@ -31,7 +31,6 @@ router.post("/add", async function (req, res, next) {
   try {
     let { name, email, password } = req.body;
 
-    // hash the password before saving the user
     let salt = await bcrypt.genSalt(10);
     let hashedPassword = await bcrypt.hash(password, salt);
 

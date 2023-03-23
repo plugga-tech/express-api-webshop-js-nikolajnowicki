@@ -1,5 +1,4 @@
 let contentContainer = document.getElementById("content-container");
-import { v4 as uuidv4 } from "https://cdn.skypack.dev/uuid";
 
 export function renderRegister() {
   let RegisterPageContainer = document.createElement("div");
@@ -91,6 +90,5 @@ export function renderRegisterInputs() {
   registerForm.appendChild(regUsernameInput);
   registerForm.appendChild(regPasswordLabel);
   registerForm.appendChild(regPasswordInput);
-
   registerForm.append(regButton);
 }

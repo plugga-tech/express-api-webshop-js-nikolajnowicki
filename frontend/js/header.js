@@ -1,12 +1,15 @@
 import { renderRegister } from "./register.js";
 import { renderHome } from "./home.js";
 import { renderAbout } from "./about.js";
+import { renderUserOrder } from "./order.js";
 
 let contentContainer = document.getElementById("content-container");
 let headerContainer = document.getElementById("header-container");
 let logoContainer = document.getElementById("logo-container");
 let navBar = document.getElementById("nav-bar");
 let loginContainer = document.getElementById("login-container");
+let mainContainer = document.getElementById("main-container");
+let userOrderContainer = document.getElementById("user-order-container");
 
 export function renderHeader() {
   let headerLogoImg = document.createElement("img");
@@ -58,10 +61,22 @@ export function renderNav() {
     renderRegister();
   });
 
+  let myOrdersBtn = document.createElement("button");
+  myOrdersBtn.innerHTML = "My Orders";
+  myOrdersBtn.id = "order-btn";
+  myOrdersBtn.className = "nav-btn";
+
+  myOrdersBtn.addEventListener("click", () => {
+    contentContainer.innerHTML = "";
+    userOrderContainer = "";
+    renderUserOrder();
+  });
+
   navBar.append(navButtons);
   navButtons.append(homeBtn);
   navButtons.append(aboutBtn);
   navButtons.append(registerBtn);
+  navButtons.append(myOrdersBtn);
 }
 
 export function renderLoginBar() {
