@@ -1,6 +1,7 @@
 let express = require("express");
 let router = express.Router();
 let Order = require("../models/orders-model");
+const tokenMiddleware = require("../utils/tokenMiddleware");
 
 router.get("/", function (req, res, next) {
   res.send("Orderss router works");
@@ -46,13 +47,8 @@ router.get("/user", function (req, res, next) {
   res.send("user order router");
 });
 
-router.post("/user", async (req, res) => {
+router.post("/user", tokenMiddleware, async (req, res) => {
   let userId = req.body.user;
-  let token = req.body.token;
-
-  if (token !== "1234key1234") {
-    return res.status(401).json({ error: "Invalid token" });
-  }
 
   try {
     let orders = await Order.find({ user: userId });

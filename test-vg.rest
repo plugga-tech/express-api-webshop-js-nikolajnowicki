@@ -13,7 +13,7 @@ POST http://localhost:3000/api/users/
 Content-Type: application/json
 
 {
-  "id": "641adfd0b3059953680def1a"
+  "id": "641b9541963d211f143dfecd"
 }
 
 ###
@@ -23,9 +23,9 @@ POST http://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-  "name": "ordertest",
-  "email": "ordertest@mail.com",
-  "password": "ordertest"
+  "name": "Kena",
+  "email": "kenaa@mail.com",
+  "password": "test123"
 }
 
 ###
@@ -35,8 +35,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-  "email": "ordertest@mail.com",
-  "password": "ordertest"
+  "email": "nikolaj@mail.com",
+  "password": "test123"
 }
 
 ###
@@ -51,7 +51,7 @@ GET http://localhost:3000/api/products
 ###
 
 // HÄMTA SPECIFIK PRODUKT
-GET http://localhost:3000/api/products/641b0c55d73c57a2ddeb381b
+GET http://localhost:3000/api/products/641b485b931beb4a22930758
 // ID PÅ EN SPECIFIK PRODUKT
 
 ###
@@ -61,18 +61,18 @@ POST http://localhost:3000/api/products/add
 Content-Type: application/json
 
 {
-  "name": "order test 2",
-  "description": "Beskrivning av produkt 1",
-  "price": 100,
-  "lager": 30,
-  "category": "Boots",
+  "name": "rebook pantalones",
+  "description": "Very sporty pants",
+  "price": 45,
+  "lager": 40,
+  "category": "pants",
   "token": "1234key1234"
 }
 
 ###
 
 // HÄMTA ALLA PRODUKTER FÖR EN SPECIFIK KATEGORI
-GET http://localhost:3000/api/products/category/ // ID PÅ EN SPECIFIK KATEGORI
+GET http://localhost:3000/api/products/category/pants
 ###
 
 //
@@ -85,7 +85,7 @@ POST http://localhost:3000/api/categories/add
 Content-Type: application/json
 
 {
-  "name": "Category 4334",
+  "name": "testcattt",
   "token": "1234key1234"
 }
 

@@ -1,6 +1,9 @@
 let express = require("express");
 let router = express.Router();
 let Product = require("../models/products-model");
+const tokenMiddleware = require("../utils/tokenMiddleware");
+
+router.use(tokenMiddleware);
 
 router.get("/", async function (req, res, next) {
   let products = await Product.find({});
@@ -14,10 +17,6 @@ router.get("/:id", async function (req, res, next) {
     return res.status(404).json({ message: "Product not found" });
   }
   res.status(200).json(product);
-});
-
-router.get("/add", function (req, res, next) {
-  res.send("Add products router router");
 });
 
 router.post("/add", async function (req, res, next) {
@@ -40,11 +39,11 @@ router.post("/add", async function (req, res, next) {
   }
 });
 
-router.get("/categories/", async function (req, res, next) {
+router.get("/categories", async function (req, res, next) {
   return res.status(400).json({ message: "Please specify a category" });
 });
 
-router.get("/category/:category?", async function (req, res, next) {
+router.get("/category/:category", async function (req, res, next) {
   let category = req.params.category;
   if (!category) {
     return res.status(400).json({ message: "Please enter a valid category" });

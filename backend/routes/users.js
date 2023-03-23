@@ -16,9 +16,12 @@ router.get("/add", function (req, res, next) {
 
 router.post("/", async function (req, res, next) {
   try {
-    let findUser = await User.find({ _id: req.body.id });
-    console.log(findUser);
-    res.send(findUser);
+    let findUser = await User.findOne({ _id: req.body.id });
+    if (findUser) {
+      res.status(200).json(findUser);
+    } else {
+      res.status(404).send("User not found");
+    }
   } catch (error) {
     res.status(400).json(error);
   }
