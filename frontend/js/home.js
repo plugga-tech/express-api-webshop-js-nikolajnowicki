@@ -59,6 +59,9 @@ export async function renderHome() {
 
     if (response.ok) {
       alert("Order sent successfully!");
+      localStorage.removeItem("cart");
+      contentContainer.innerHTML = "";
+      renderHome();
     } else {
       alert("Failed to send order.");
     }

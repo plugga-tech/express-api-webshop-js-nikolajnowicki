@@ -136,7 +136,7 @@ export function renderLoginBar() {
 
 export function renderLoggedIn(loginBar) {
   loginBar.innerHTML = "";
-  loginBar.innerHTML = `Welcome!`;
+  loginBar.innerHTML = "";
 
   let logoutBtn = document.createElement("button");
   logoutBtn.innerHTML = "Logout";
@@ -148,5 +148,6 @@ export function renderLoggedIn(loginBar) {
     localStorage.removeItem("token");
     loginBar.innerHTML = "";
     renderLoginBar();
+    renderHome();
   });
 }

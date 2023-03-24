@@ -1,3 +1,5 @@
+import { renderHome } from "./home.js";
+
 let contentContainer = document.getElementById("content-container");
 
 export function renderRegister() {
@@ -76,9 +78,10 @@ export function renderRegisterInputs() {
     });
 
     if (response.ok) {
-      console.log(response);
+      alert("Account Created");
+      renderHome();
     } else {
-      console.log("Failed to add user");
+      alert("Account Creation Failed");
     }
   });
 
