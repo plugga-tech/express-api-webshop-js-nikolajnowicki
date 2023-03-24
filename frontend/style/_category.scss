@@ -1,9 +1,14 @@
 #home-page-header {
   text-align: center;
+  font-family: "Rubik", sans-serif;
+  margin-top: 40px;
 }
 
 .category-header {
   text-align: center;
+  font-family: "Rubik", sans-serif;
+  margin-top: 90px;
+  margin-bottom: 40px;
 }
 
 .product-container {
@@ -12,6 +17,7 @@
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: "Rubik", sans-serif;
 }
 
 .category-container .product-card {

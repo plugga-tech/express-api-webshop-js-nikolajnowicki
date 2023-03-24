@@ -14,4 +14,8 @@ router.use("/products", productsRouter);
 router.use("/categories", categoriesRouter);
 router.use("/orders", ordersRouter);
 
+router.get("/getApiKey", (req, res) => {
+  res.json({ apiKey: process.env.API_KEY });
+});
+
 module.exports = router;

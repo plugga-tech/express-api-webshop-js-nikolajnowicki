@@ -45,35 +45,25 @@ export async function renderUserOrder() {
   let userOrder = document.createElement("div");
   userOrder.id = "user-order";
 
-  let token = localStorage.getItem("token");
-  let [, payload] = token.split(".");
-  let decodedPayload = JSON.parse(atob(payload));
-  let userId = decodedPayload.userId;
+  const token = localStorage.getItem("token");
+  const [, payload] = token.split(".");
+  const decodedPayload = JSON.parse(atob(payload));
+  const userId = decodedPayload.userId;
 
   try {
-    let orders = await getUserOrders(userId);
-    for (let order of orders) {
-      let orderDiv = document.createElement("div");
-      orderDiv.id = "order-div";
-      let orderId = document.createElement("p");
-      orderId.innerHTML = `Order ID:  ${order._id}`;
-      orderId.id = "order-id";
-      userOrder.appendChild(orderDiv);
-      orderDiv.appendChild(orderId);
+    const orders = await getUserOrders(userId);
+    for (const order of orders) {
+      const orderDiv = document.createElement("div");
+      orderDiv.innerHTML = `Order ID: ${order._id}`;
 
-      for (let item of order.products) {
-        let productResponse = await fetch(
+      for (const item of order.products) {
+        const productResponse = await fetch(
           `http://localhost:3000/api/products/${item.productId}`
         );
-        let product = await productResponse.json();
-        let productName = document.createElement("p");
-        productName.innerHTML = `Product: ${product.name}`;
-        productName.id = "product-name";
-        let productQuantity = document.createElement("p");
-        productQuantity.innerHTML = `Quantity: ${item.quantity}`;
-        productQuantity.id = "product-quantity";
-        orderDiv.appendChild(productName);
-        orderDiv.appendChild(productQuantity);
+        const product = await productResponse.json();
+        const productDiv = document.createElement("div");
+        productDiv.innerHTML = `Product: ${product.name}, Quantity: ${item.quantity}`;
+        orderDiv.appendChild(productDiv);
       }
       userOrder.appendChild(orderDiv);
     }
