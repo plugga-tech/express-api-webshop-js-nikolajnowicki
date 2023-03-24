@@ -158,6 +158,62 @@ async function populateServer() {
         lager: "15",
         category: "Jackets",
       }).save(),
+      new Product({
+        name: "Red Hat",
+        description: "Blue color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Blue Hat",
+        description: "Blue color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Green Hat",
+        description: "Green color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Yellow Hat",
+        description: "Yellow color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "White Hat",
+        description: "White color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Black Hat",
+        description: "Black color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Gold Hat",
+        description: "Gold color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
+      new Product({
+        name: "Magenta Hat",
+        description: "Magenta color hat",
+        price: "29",
+        lager: "45",
+        category: "Hats",
+      }).save(),
     ]);
   }
 }
